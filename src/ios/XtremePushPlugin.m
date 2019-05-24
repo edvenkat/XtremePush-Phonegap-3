@@ -86,6 +86,7 @@ static NSMutableDictionary *pushNotificationBackupList;
         if (pushPermissionsRequest != nil) requestNotificationPermissions = [pushPermissionsRequest boolValue];
     }
     [XPush setAsksForLocationPermissions:requestLocationPermissions];
+    [XPush setSandboxModeEnabled:YES];
     if (requestNotificationPermissions)
         [XPush registerForRemoteNotificationTypes:XPNotificationType_Alert | XPNotificationType_Sound | XPNotificationType_Badge];
     pushNotificationBackupList = [[NSMutableDictionary alloc] init];
